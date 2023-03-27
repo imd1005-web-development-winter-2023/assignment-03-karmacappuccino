@@ -2,6 +2,9 @@
 //  JS File
 //  You may remove the code below - it's just boilerplate
 //
+const todos = [
+
+];
 
 
 const todoList = document.querySelector(".todo-list");
