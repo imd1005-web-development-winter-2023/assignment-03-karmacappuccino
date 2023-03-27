@@ -5,38 +5,122 @@
 /*
  VARIABLES
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
+:root {}
 
 /*
   PAGE / BODY
 */
+
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(#588157, #344e41);
 }
 
-main {
-  min-height: 100vh;
+.page {
+  min-width: 100%;
+  min-height: 100%;
 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  resize: none;
+
+}
+
+
+.TODO-title {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 100px;
+  margin-right: 00px;
+
+}
+
+.enter-todo {
+  display: flex;
+  background-color: white;
+  justify-content: left;
+  margin: 0 500px 0 500px;
+  padding: 10px;
+  box-shadow: 2px 2px 4px #808080;
+
+
+}
+
+.your-todo {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  margin: 10px 500px 0 500px;
+  padding: 20px;
+  box-shadow: 2px 2px 4px #808080;
+  gap: 5px;
+}
+
+
+input {
+  padding: 5px;
+  border: none;
+
+  flex-direction: row;
+
+}
+
+.submit {
+  margin-left: 250px;
+  padding: 0 15px 0 15px;
+  box-shadow: 1px 1px 6px #808080;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #dad7cd;
+}
+
+.submit:active {
+  background-color: #a3b18a;
+}
+
+.clear-all {
+  border: none;
+  box-shadow: 1px 1px 6px #808080;
+  cursor: pointer;
+}
+
+.clear-all:hover {
+  background-color: #dad7cd;
+}
+
+.clear-all:active {
+  background-color: #a3b18a;
+}
+
+.button {
+  background-color: red;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 35px;
+  color: white;
+
+}
+
+p {
+  font-size: 20px;
+}
+
+button {
+  border: none;
+  margin: 10px;
+  box-shadow: 1px 1px 6px #808080;
+}
+
+li {
+  list-style-type: circle;
 }
 
 /*
