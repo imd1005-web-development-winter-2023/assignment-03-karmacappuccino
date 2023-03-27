@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Set the page title -->
-    <title>Assignment 03</title>
 
-    <!-- Set the charset we're using to UTF-8 -->
-    <meta charset="UTF-8" />
+<head>
+  <!-- Set the page title -->
+  <title>Assignment 03</title>
 
-    <!-- Set the screens default zoom / scale to 1 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Set the charset we're using to UTF-8 -->
+  <meta charset="UTF-8" />
 
-    <!-- We are using a CSS Reset file to standardize browser default css -->
-    <link rel="stylesheet" href="reset.css" />
+  <!-- Set the screens default zoom / scale to 1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- This is where all of our awesome CSS code goes -->
-    <link rel="stylesheet" href="style.css" />
+  <!-- We are using a CSS Reset file to standardize browser default css -->
+  <link rel="stylesheet" href="reset.css" />
 
-    <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
-  </head>
-  <body>
-    <!--
+  <!-- This is where all of our awesome CSS code goes -->
+  <link rel="stylesheet" href="style.css" />
 
-      ADD YOUR ASSIGNMENT 03 CODE
+  <!-- Set the Favicon  -->
+  <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
+</head>
 
-      YOU MAY REMOVE THE BOILERPLATE CODE BELOW
+<body>
+  <main>
+    <!-- Flex display-->>
+   <div class="page">
+      <!-- Title of web app-->
+      <div class="TODO-title">
+        <h1>Things you need to do before Melanie Martinez's new album!</h1>
+      </div>
+      
 
-      IMPORTANT CHECKLIST:
-
-      - Are users able to create and delete to do list items?
-      - Have you set a favicon? (included - but it's a rocket)
-      - Do you have a css reset file? (included)
-      - Has a team member conducted a code review and left a GitHub Issue in your repo?
-      - Have you conducted a code review and left a GitHub Issue on your team member's repo?
-
-    -->
-    <main>
-      <div id="app"></div>
-    </main>
-
-    <!-- This is where we add our awesome JavaScript code -->
-    <script src="./main.js"></script>
-  </body>
+        <div class="content">
+          <div class="enter-todo">
+            <form class="add-todo-form">
+              <label for="todo-name"></label>
+              <!--HTML form-->
+              <input type="text" name="item" id="todo-name" placeholder="Enter a TODO..." required />
+              <button class="submit"> <img src="images/plus.png" alt="addition icon" width="20"></button>
+            </form>
+          </div>
+          <div class="your-todo">
+            <p class="your-to">Your TODO's</p>
+            <ul class="todo-list">
+              <li>Loading...</li>
+            </ul>
+            <!--Clear all button-->
+            <button class="clear-all">Clear all</button>
+          </div>
+        </div>
+    </div>
+    
+  </main>
+  <!-- This is where we add our awesome JavaScript code -->
+  <script src="./main.js"></script>
+</body>
 </html>

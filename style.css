@@ -5,38 +5,121 @@
 /*
  VARIABLES
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+:root {}
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
-}
-
-/*
-  PAGE / BODY
-*/
+/*Edit of whole web app*/
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url("images/portals.jpg");
 }
 
-main {
-  min-height: 100vh;
+.page {
+  min-width: 100%;
+  min-height: 100%;
 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  resize: none;
+
+}
+
+/*flex title edits*/
+.TODO-title {
+  display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 100px;
+  margin-right: 00px;
+  border-radius: 1rem;
+
+}
+
+/*input for todo*/
+.enter-todo {
+  display: flex;
+  background-color: white;
+  justify-content: left;
+  margin: 0 500px 0 500px;
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px #808080;
+}
+
+/*todo list*/
+.your-todo {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  margin: 10px 500px 0 500px;
+  padding: 20px;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px #808080;
+  gap: 5px;
+}
+
+/*input css*/
+input {
+  padding: 5px;
+  border: none;
+  flex-direction: row;
+}
+
+/*submit button (plus icon)*/
+.submit {
+  margin-left: 250px;
+  padding: 0 15px 0 15px;
+  box-shadow: 1px 1px 6px #808080;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: #dad7cd;
+}
+
+.submit:active {
+  background-color: #a3b18a;
+}
+
+/*clear all button*/
+.clear-all {
+  border: none;
+  box-shadow: 1px 1px 6px #808080;
+  cursor: pointer;
+}
+
+.clear-all:hover {
+  background-color: #dad7cd;
+}
+
+.clear-all:active {
+  background-color: #a3b18a;
+}
+
+/*header*/
+h1 {
+  font-weight: 500;
+  font-size: 35px;
+  border-radius: 1rem;
+  margin: 25px;
+  padding: 8px;
+  background-color: white;
+}
+
+/*paragraph*/
+p {
+  font-size: 20px;
+}
+
+button {
+  border: none;
+  margin: 10px;
+  box-shadow: 1px 1px 6px #808080;
+}
+
+li {
+  list-style-type: circle;
 }
 
 /*

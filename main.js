@@ -1,44 +1,110 @@
 //
 //  JS File
-//  You may remove the code below - it's just boilerplate
 //
 
 //
-// Variables
-//
-
 // Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+// 
 
-// Variables
+//constant todos that display when opening web page
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+const todos = [
+  {
+    text: "Pace around room (24/7)",
+    isDone: true,
+  },
+
+  {
+    text: "Cry at 12AM",
+    isDone: true,
+  },
+
+  {
+    text: "Lisen to Portals on March 31st 3AM EST",
+    isDone: true,
+  }
+];
+
+const todoList = document.querySelector(".todo-list"); //todo list
+const form = document.querySelector(".add-todo-form"); //html form 
+const todoInput = document.querySelector("#todo-name"); // todo input
+const clearAllButton = document.querySelector(".clear-all"); //to clear all todo inputs
+
+todoList.classList.add("className");
+
+console.log(todoList);
 
 //
 // Functions
 //
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
+function getList() {
+  //adds the new tasks and prints them
+  while (todoList.firstChild) {
+    todoList.removeChild(todoList.firstChild);
+  }
+
+  for (let i = 0; i < todos.length; i++) {
+    const yourTodo = document.createElement("li");
+    yourTodo.textContent = todos[i].text + " " + todos[i].isDone;
+
+    //clear button for todo
+    const todoListButton = document.createElement("button");
+    todoListButton.innerHTML = '<img src= images/trash.png width= 20px> ';
+
+    todoListButton.style.backgroundColor = '#FFCCCB';
+
+    todoListButton.style.cursor = "pointer";
+
+    todoListButton.dataset.index = i;
+
+    yourTodo.appendChild(todoListButton);
+
+    todoList.appendChild(yourTodo);
+  }
+}
+
+//add a new todo by user
+function addTodo(event) {
+  event.preventDefault();
+
+  const newTodo = todoInput.value;
+
+  todos.push({
+    text: newTodo,
+    isDone: true,
+  });
+
+  console.log("todo", newTodo);
+
+  console.log(todos);
+
+  getList(true);
+}
+
+function handleButtonClickInsideUl(event) {
+  if (event.target.nodeName !== "BUTTON") {
     return;
   }
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
+  todoArrayIndexToClear = event.target.dataset.index;
 
-  // Init complete
-  console.log("App successfully initialised");
+  todos.splice(todoArrayIndexToClear, 1);
+
+  console.log(todos);
+
+  getList();
 }
 
-//
-// Inits & Event Listeners
-//
+form.addEventListener("submit", addTodo);
+todoList.addEventListener("click", handleButtonClickInsideUl);
 
-inititialise();
+getList();
+
+function clearAllTodos(event) {
+  todos.length = 0;
+
+  getList();
+}
+
+clearAllButton.addEventListener("click", clearAllTodos);
