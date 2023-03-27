@@ -7,14 +7,10 @@
 */
 :root {}
 
-/*
-  PAGE / BODY
-*/
-
-
+/*Edit of whole web app*/
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: radial-gradient(#588157, #344e41);
+  background: url("images/portals.jpg");
 }
 
 .page {
@@ -30,45 +26,47 @@ body {
 
 }
 
-
+/*flex title edits*/
 .TODO-title {
   display: flex;
   justify-content: center;
   margin-top: 100px;
   margin-right: 00px;
+  border-radius: 1rem;
 
 }
 
+/*input for todo*/
 .enter-todo {
   display: flex;
   background-color: white;
   justify-content: left;
   margin: 0 500px 0 500px;
   padding: 10px;
+  border-radius: 1rem;
   box-shadow: 2px 2px 4px #808080;
-
-
 }
 
+/*todo list*/
 .your-todo {
   display: flex;
   background-color: white;
   flex-direction: column;
   margin: 10px 500px 0 500px;
   padding: 20px;
+  border-radius: 1rem;
   box-shadow: 2px 2px 4px #808080;
   gap: 5px;
 }
 
-
+/*input css*/
 input {
   padding: 5px;
   border: none;
-
   flex-direction: row;
-
 }
 
+/*submit button (plus icon)*/
 .submit {
   margin-left: 250px;
   padding: 0 15px 0 15px;
@@ -84,6 +82,7 @@ input {
   background-color: #a3b18a;
 }
 
+/*clear all button*/
 .clear-all {
   border: none;
   box-shadow: 1px 1px 6px #808080;
@@ -98,17 +97,17 @@ input {
   background-color: #a3b18a;
 }
 
-.button {
-  background-color: red;
-}
-
+/*header*/
 h1 {
   font-weight: 500;
   font-size: 35px;
-  color: white;
-
+  border-radius: 1rem;
+  margin: 25px;
+  padding: 8px;
+  background-color: white;
 }
 
+/*paragraph*/
 p {
   font-size: 20px;
 }
