@@ -50,7 +50,7 @@ function getList() {
 
     //clear button for todo
     const todoListButton = document.createElement("button");
-    todoListButton.innerHTML = '<img src= images/trash.png width= 20px> ';
+    todoListButton.innerHTML = '<img src= trash.png width= 20px> ';
 
     todoListButton.style.backgroundColor = '#FFCCCB';
 
