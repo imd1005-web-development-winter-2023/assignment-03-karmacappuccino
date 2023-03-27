@@ -1,32 +1,54 @@
 //
 //  JS File
-//  You may remove the code below - it's just boilerplate
 //
-const todos = [
 
+//
+// Constants
+// 
+
+//constant todos that display when opening web page
+
+const todos = [
+  {
+    text: "Pace around room (24/7)",
+    isDone: true,
+  },
+
+  {
+    text: "Cry at 12AM",
+    isDone: true,
+  },
+
+  {
+    text: "Lisen to Portals on March 31st 3AM EST",
+    isDone: true,
+  }
 ];
 
-
-const todoList = document.querySelector(".todo-list");
-const form = document.querySelector(".add-todo-form");
-const toDoInputBox = document.querySelector("#todo-name");
-const clearAllButton = document.querySelector(".clear-all");
+const todoList = document.querySelector(".todo-list"); //todo list
+const form = document.querySelector(".add-todo-form"); //html form 
+const todoInput = document.querySelector("#todo-name"); // todo input
+const clearAllButton = document.querySelector(".clear-all"); //to clear all todo inputs
 
 todoList.classList.add("className");
 
 console.log(todoList);
 
+//
+// Functions
+//
 
 function getList() {
-  // Clear all of the entries in the list
+  //adds the new tasks and prints them
   while (todoList.firstChild) {
     todoList.removeChild(todoList.firstChild);
   }
 
   for (let i = 0; i < todos.length; i++) {
-    const todoListItem = document.createElement("li");
-    todoListItem.textContent = todos[i].text + " " + todos[i].isDone;
+    const yourTodo = document.createElement("li");
+    yourTodo.textContent = todos[i].text + " " + todos[i].isDone;
 
+    //clear button for todo
     const todoListButton = document.createElement("button");
     todoListButton.innerHTML = '<img src= images/trash.png width= 20px> ';
 
@@ -36,27 +58,28 @@ function getList() {
 
     todoListButton.dataset.index = i;
 
-    todoListItem.appendChild(todoListButton);
+    yourTodo.appendChild(todoListButton);
 
-    todoList.appendChild(todoListItem);
+    todoList.appendChild(yourTodo);
   }
 }
 
-function addTodoItem(event) {
+//add a new todo by user
+function addTodo(event) {
   event.preventDefault();
 
-  const newTodo = toDoInputBox.value;
+  const newTodo = todoInput.value;
 
   todos.push({
     text: newTodo,
-    isDone: false,
+    isDone: true,
   });
 
-  console.log("I AM A FUNCTION", newTodo);
+  console.log("todo", newTodo);
 
   console.log(todos);
 
-  getList();
+  getList(true);
 }
 
 function handleButtonClickInsideUl(event) {
@@ -73,7 +96,7 @@ function handleButtonClickInsideUl(event) {
   getList();
 }
 
-form.addEventListener("submit", addTodoItem);
+form.addEventListener("submit", addTodo);
 todoList.addEventListener("click", handleButtonClickInsideUl);
 
 getList();
